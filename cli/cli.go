@@ -62,6 +62,13 @@ func Init() *cli.App {
 			Flags: flags1,
 			Action: searchIPsNS,
 		},
+		{
+			Name: "txt",
+			ShortName: "t",
+			Usage: "Search the DNS TXT",
+			Flags: flags1,
+			Action: searchTxt,
+		},
 	}
 
 	return app

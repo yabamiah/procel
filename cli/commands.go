@@ -5,8 +5,8 @@ import (
 	"log"
 	"net"
 
-	"github.com/urfave/cli"
 	"github.com/fatih/color"
+	"github.com/urfave/cli"
 )
 
 func catch(err error) {
@@ -82,4 +82,16 @@ func searchIPsNS(c *cli.Context) {
 	for _, server := range servers {
 		fmt.Println(server)
 	}
+}
+
+func searchTxt(c *cli.Context) {
+	host := c.String("host")
+
+	txts, err := net.LookupTXT(host)
+	catch(err)
+
+	color.Red("CNAME:")
+	for _, txt := range txts {
+		fmt.Println(txt)
+	} 
 }
