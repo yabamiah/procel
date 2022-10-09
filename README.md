@@ -37,7 +37,7 @@ myapp mx --host wikipedia.org
 ```bash
 git clone https://github.com/yabamiah/procel
 cd procel
-gor run /
+./build/myapp
 ```
 
 ## Contributing
