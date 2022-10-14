@@ -1,5 +1,5 @@
 # procel
-Is a tiny network CLI made in Go with urfave/cli package, which can quickly look up IPs addresses, hosts, DNS NS and MX. 
+Is a tiny network CLI made in Go with urfave/cli package, which can quickly look up IPs addresses, hosts, DNS NS, MX, TXT and scan ports. 
 Mainly made to train the Go language and the implementation of your packages and project organization.
 <p align="center"><img src="Captura de tela_2022-10-07_22-18-30.png" width="700"></p>
 
@@ -28,9 +28,22 @@ myapp host --ip 5.255.255.50
 ```bash
 myapp ns --host wikipedia.org
 ```
-#### and MX
+#### DNS MX 
 ```bash
 myapp mx --host wikipedia.org
+```
+#### DNS TXT
+```bash
+myapp txt --host wikipedia.org
+```
+
+#### Scan one port
+```bash
+myapp scan --host localhost --protocol tcp --port 8080
+```
+#### Scan all port tcp ports
+```bash 
+myapp scan --host localhost --protocol tcp --all
 ```
 
 ## Quick Starting
