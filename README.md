@@ -11,7 +11,7 @@ Mainly made to train the Go language and the implementation of your packages and
 go get github.com/yabamiah/procel
 ```
 
-## Usage
+## Examples
 
 #### Get a IP addresses by a host link
 
@@ -41,7 +41,7 @@ myapp txt --host wikipedia.org
 ```bash
 myapp scan --host localhost --protocol tcp --port 8080
 ```
-#### Scan all port tcp ports
+#### Scan all tcp ports
 ```bash 
 myapp scan --host localhost --protocol tcp --all
 ```
