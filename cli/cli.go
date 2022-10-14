@@ -1,8 +1,8 @@
 package cli
 
 import (
-	"github.com/urfave/cli"
 	"github.com/fatih/color"
+	"github.com/urfave/cli"
 )
 
 func Init() *cli.App {
@@ -23,6 +23,25 @@ func Init() *cli.App {
 		cli.StringFlag{
 			Name: "ip",
 			Value: "5.255.255.50",
+		},
+	}
+
+	flags3 := []cli.Flag {
+		cli.StringFlag{
+			Name: "protocol",
+			Value: "tcp",
+		},
+		cli.StringFlag{
+			Name: "host",
+			Value: "localhost",
+		},
+		cli.Int64Flag{
+			Name: "port",
+			Value: 8080,
+		},
+		cli.BoolFlag{
+			Name: "all",
+			Hidden: true,
 		},
 	}
 
@@ -68,6 +87,13 @@ func Init() *cli.App {
 			Usage: "Search the DNS TXT",
 			Flags: flags1,
 			Action: searchTxt,
+		},
+		{
+			Name: "scan",
+			ShortName: "sc",
+			Usage: "Scan all ports of your computer",
+			Flags: flags3,
+			Action: scanPort,
 		},
 	}
 
