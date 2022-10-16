@@ -12,6 +12,7 @@ func Init() *cli.App {
 	app.Version = color.RedString("0.0.0")
 	app.Author = "Yabamiah"
 
+	// Flags 1 is for commands need a host value
 	flags1 :=[]cli.Flag {
 		cli.StringFlag{
 			Name: "host",
@@ -19,6 +20,7 @@ func Init() *cli.App {
 		},
 	}
 
+	// Flags 2 is for commands need a ip value
 	flags2 := []cli.Flag {
 		cli.StringFlag{
 			Name: "ip",
@@ -26,6 +28,7 @@ func Init() *cli.App {
 		},
 	}
 
+	// Flags 3 is for the scan command
 	flags3 := []cli.Flag {
 		cli.StringFlag{
 			Name: "protocol",

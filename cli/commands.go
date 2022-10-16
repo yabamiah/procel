@@ -98,41 +98,5 @@ func searchTxt(c *cli.Context) {
 }
 
 func scanPort(c *cli.Context) {
-	y := color.New(color.FgYellow, color.Bold)
-	r := color.New(color.FgRed, color.Bold)
-	g := color.New(color.FgGreen, color.Bold)
-
-
-	allPorts := c.Bool("all")
-
-	if allPorts {
-		var ports []internal.PortStatus
-
-		for i := 0; i <= 1024; i++ {
-			ports = append(ports, internal.ScanPorts(c.String("host"), c.String("protocol"), i))
-		}
-		for _, port := range ports {
-			y.Printf("%d: ", port.Port)
-
-			if port.State == "Closed" {
-				g.Printf("%s\n", port.State)
-			} else {
-				r.Printf("%s\n", port.State)
-			}
-		}
-
-	} else {
-		port := internal.ScanPorts(
-			c.String("host"),
-			c.String("protocol"), 
-			c.Int("port"))
-
-		y.Printf("%d: ", port.Port)
-		if port.State == "Closed" {
-			g.Printf("%s\n", port.State)
-		} else {
-			r.Printf("%s\n", port.State)
-		}
-
-	}
+	internal.CatchPorts(c.String("host"), c.String("protocol"), c.Int("port"), c.Bool("all"))
 }
