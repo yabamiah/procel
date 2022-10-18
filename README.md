@@ -1,7 +1,7 @@
 # procel
 Is a tiny network CLI made in Go with urfave/cli package, which can quickly look up IPs addresses, hosts, DNS NS, MX, TXT and scan ports. 
 Mainly made to train the Go language and the implementation of your packages and project organization.
-<p align="center"><img src="Captura de tela_2022-10-07_22-18-30.png" width="700"></p>
+<p align="center"><img src="applicationonterminal.png" width="700"></p>
 
 ---
 
