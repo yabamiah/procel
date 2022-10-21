@@ -9,8 +9,6 @@ import (
 
 func main() {
 	applicattion := cli.Init()
-	
-	applicattion.EnableBashCompletion = true
 
 	err := applicattion.Run(os.Args)
 	if err != nil {

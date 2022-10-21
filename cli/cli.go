@@ -6,11 +6,14 @@ import (
 )
 
 func Init() *cli.App {
+	r := color.New(color.FgRed, color.Bold)
+
 	app := cli.NewApp()
-	app.Name = color.RedString("Procel is an Aplicattion of Command Line Interface (CLI)")
-	app.Usage = color.RedString("🔎 Search IPs, Addresses, Hosts, DNs SN and MX on internet.")
-	app.Version = color.RedString("0.0.0")
+	app.Name = r.Sprint("Procel is an Aplicattion of Command Line Interface (CLI)")
+	app.Usage = r.Sprint("🔎 Search IPs, Addresses, Hosts, DNs SN and MX on internet.")
+	app.Version = r.Sprint("0.0.0")
 	app.Author = "Yabamiah"
+	app.EnableBashCompletion = true
 
 	// Flags 1 is for commands need a host value
 	flags1 :=[]cli.Flag {
@@ -65,7 +68,7 @@ func Init() *cli.App {
 		},
 		{
 			Name: "ns",
-			ShortName: "s",
+			ShortName: "n",
 			Usage: "Search DNs serve names for a particular host",
 			Flags: flags1,
 			Action: searchNS,
@@ -79,7 +82,7 @@ func Init() *cli.App {
 		},
 		{
 			Name: "serverall",
-			ShortName: "a",
+			ShortName: "si",
 			Usage: "Serch IPs addresses and DNS SN for a particular host",
 			Flags: flags1,
 			Action: searchIPsNS,
@@ -93,7 +96,7 @@ func Init() *cli.App {
 		},
 		{
 			Name: "scan",
-			ShortName: "sc",
+			ShortName: "s",
 			Usage: "Scan all ports of your computer",
 			Flags: flags3,
 			Action: scanPort,
