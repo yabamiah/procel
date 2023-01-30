@@ -97,6 +97,10 @@ func searchTxt(c *cli.Context) {
 	} 
 }
 
+func archive(c *cli.Context) {
+	internal.GenerateRandomChareters(c.String("file"), c.String("size"))
+}
+
 func scanPort(c *cli.Context) {
 	internal.CatchPorts(c.String("host"), c.String("protocol"), c.Int("port"), c.Bool("all"))
 }

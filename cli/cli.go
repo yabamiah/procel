@@ -51,6 +51,17 @@ func Init() *cli.App {
 		},
 	}
 
+	flags4 := []cli.Flag {
+		cli.StringFlag{
+			Name: "file",
+			Value: "file.txt",
+		},
+		cli.StringFlag{
+			Name: "size",
+			Value: "100",
+		},
+	}
+
 	app.Commands = []cli.Command {
 		{
 			Name: "ips",
@@ -100,6 +111,13 @@ func Init() *cli.App {
 			Usage: "Scan all ports of your computer",
 			Flags: flags3,
 			Action: scanPort,
+		},
+		{
+			Name: "archive",
+			ShortName: "a",
+			Usage: "Insert characters randomly in a archive",
+			Flags: flags4,
+			Action: archive,
 		},
 	}
 
