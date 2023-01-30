@@ -46,7 +46,7 @@ myapp scan --host localhost --protocol tcp --port 8080
 myapp scan --host localhost --protocol tcp --all
 ```
 
-#### Insert random characters in a file
+#### Injects random characters in a file
 ```bash
 myapp archive --file file.txt --size 100
 ```
