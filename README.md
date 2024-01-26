@@ -50,7 +50,6 @@ myapp scan --host localhost --protocol tcp --all
 ```bash
 myapp archive --file file.txt --size 100
 ```
-```
 
 ## Quick Starting
 ```bash
